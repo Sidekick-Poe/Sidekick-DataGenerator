@@ -59,7 +59,7 @@ internal class GgpkFileGenerator
 
     private async Task WriteUnicode(IFileRecord fileRecord)
     {
-        var bytes = fileRecord.ReadFileContent(GgpkContainer.fileStream);
+        var unicode = Encoding.Unicode.GetString(fileRecord.ReadFileContent(GgpkContainer.fileStream));
 
         // Determine file path
         var path = Path.Combine(OutputPath, Path.GetFileName(RecordTreeNode.Name));
@@ -71,6 +71,7 @@ internal class GgpkFileGenerator
         // Write the file
         using var stream = File.Create(path);
         var encoding = new UTF8Encoding(true);
+        var bytes = encoding.GetBytes(unicode);
         await stream.WriteAsync(encoding.Preamble.ToArray());
         await stream.WriteAsync(bytes);
     }

@@ -21,7 +21,6 @@
     <ProjectReference Include="..\..\Sidekick-GGPK\Cross-Platform\LibDat2\LibDat2.csproj" />
     <ProjectReference Include="..\..\Sidekick-GGPK\LibBundle\LibBundle.csproj" />
     <ProjectReference Include="..\..\Sidekick-GGPK\LibGGPK2\LibGGPK2.csproj" />
-    <ProjectReference Include="..\Sidekick.Data.Common\Sidekick.DataGenerator.Common.csproj" />
     <ProjectReference Include="..\Sidekick.DataGenerator.Common\Sidekick.DataGenerator.Common.csproj" />
   </ItemGroup>
 
