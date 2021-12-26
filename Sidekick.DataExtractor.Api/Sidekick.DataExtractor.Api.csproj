@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net6.0-windows7.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
@@ -18,10 +18,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Sidekick-GGPK\Cross-Platform\LibDat2\LibDat2.csproj" />
-    <ProjectReference Include="..\..\Sidekick-GGPK\LibBundle\LibBundle.csproj" />
-    <ProjectReference Include="..\..\Sidekick-GGPK\LibGGPK2\LibGGPK2.csproj" />
-    <ProjectReference Include="..\Sidekick.DataGenerator.Common\Sidekick.DataGenerator.Common.csproj" />
+    <ProjectReference Include="..\Sidekick.Data.Api\Sidekick.Data.Api.csproj" />
+    <ProjectReference Include="..\Sidekick.DataExtractor.Common\Sidekick.DataExtractor.Common.csproj" />
   </ItemGroup>
 
 </Project>

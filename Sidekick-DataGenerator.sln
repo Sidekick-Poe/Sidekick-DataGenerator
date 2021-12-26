@@ -12,13 +12,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Solution", "_Solution", "{
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sidekick.DataGenerator.Common", "Sidekick.DataGenerator.Common\Sidekick.DataGenerator.Common.csproj", "{D904BDD2-6F7B-430A-9982-0865588D1E71}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sidekick.DataExtractor.Common", "Sidekick.DataExtractor.Common\Sidekick.DataExtractor.Common.csproj", "{D904BDD2-6F7B-430A-9982-0865588D1E71}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sidekick.DataGenerator.Game", "Sidekick.DataGenerator.Game\Sidekick.DataGenerator.Game.csproj", "{C0256D7F-4F2E-4728-BEC1-22C0F92458E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sidekick.DataExtractor.Game", "Sidekick.DataExtractor.Game\Sidekick.DataExtractor.Game.csproj", "{C0256D7F-4F2E-4728-BEC1-22C0F92458E0}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataGenerator", "DataGenerator", "{C7DD89AE-474D-4DF1-A145-0634BEDCE061}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Extractors", "Extractors", "{C7DD89AE-474D-4DF1-A145-0634BEDCE061}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sidekick.DataGenerator.Api", "Sidekick.DataGenerator.Api\Sidekick.DataGenerator.Api.csproj", "{E7B050D9-6434-4A85-B0AD-7AE3678E8FD3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sidekick.DataExtractor.Api", "Sidekick.DataExtractor.Api\Sidekick.DataExtractor.Api.csproj", "{E7B050D9-6434-4A85-B0AD-7AE3678E8FD3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{C7E72AC9-D864-4C2B-BDDA-E6E08744B516}"
 EndProject
@@ -29,6 +29,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibBundle", "..\Sidekick-GGPK\LibBundle\LibBundle.csproj", "{AAFB5891-FD15-4FC5-B656-1905A96733DF}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibDat2", "..\Sidekick-GGPK\Cross-Platform\LibDat2\LibDat2.csproj", "{A151F5CC-F6CD-4886-8ACC-9B6FE9F10AE9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sidekick.DataGenerator", "Sidekick.DataGenerator\Sidekick.DataGenerator.csproj", "{8FAA4F31-C440-456D-A54E-DE1A209C47A5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -94,6 +96,14 @@ Global
 		{A151F5CC-F6CD-4886-8ACC-9B6FE9F10AE9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A151F5CC-F6CD-4886-8ACC-9B6FE9F10AE9}.Release|x64.ActiveCfg = Release|Any CPU
 		{A151F5CC-F6CD-4886-8ACC-9B6FE9F10AE9}.Release|x64.Build.0 = Release|Any CPU
+		{8FAA4F31-C440-456D-A54E-DE1A209C47A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FAA4F31-C440-456D-A54E-DE1A209C47A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FAA4F31-C440-456D-A54E-DE1A209C47A5}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{8FAA4F31-C440-456D-A54E-DE1A209C47A5}.Debug|x64.Build.0 = Debug|Any CPU
+		{8FAA4F31-C440-456D-A54E-DE1A209C47A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FAA4F31-C440-456D-A54E-DE1A209C47A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FAA4F31-C440-456D-A54E-DE1A209C47A5}.Release|x64.ActiveCfg = Release|Any CPU
+		{8FAA4F31-C440-456D-A54E-DE1A209C47A5}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
