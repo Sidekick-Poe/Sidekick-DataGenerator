@@ -12,9 +12,12 @@ public class DataConfiguration
                 .Build();
 
         DataPath = Root.GetSection("DataPath").Value;
+        GgpkPath = Root.GetSection("GgpkPath").Value;
     }
 
     private IConfigurationRoot Root { get; }
 
     public string DataPath { get; }
+
+    public string GgpkPath { get; }
 }

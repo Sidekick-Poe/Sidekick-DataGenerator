@@ -1,4 +1,4 @@
-﻿namespace Sidekick.Data.Api.Client;
+﻿namespace Sidekick.DataGenerator.Api.Client;
 
 internal static class Languages
 {

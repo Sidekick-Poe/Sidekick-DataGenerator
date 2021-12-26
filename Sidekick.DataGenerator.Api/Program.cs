@@ -1,28 +1,14 @@
-﻿using Sidekick.Data.Api.Client;
-using Sidekick.Data.Api.Modifiers;
+﻿using Sidekick.Data.Api.Modifiers;
 using Sidekick.Data.Api.StaticItems;
 using Sidekick.Data.Common;
+using Sidekick.DataGenerator.Api.Client;
 using System.Text.Json;
 
-Console.WriteLine("Sidekick Api Data extraction tool");
+Console.WriteLine("Sidekick Api Data Extraction Tool");
 Console.WriteLine("Starting extraction");
 
 var configuration = new DataConfiguration();
-var apiPath = Path.Combine(configuration.DataPath, "Api/");
-
-// Set base url for the apis
-var baseUrls = new Dictionary<string, string>()
-{
-    { "de", "https://de.pathofexile.com/" },
-    { "en", "https://www.pathofexile.com/" },
-    { "es", "https://es.pathofexile.com/" },
-    { "fr", "https://fr.pathofexile.com/" },
-    { "kr", "https://poe.game.daum.net/" },
-    { "pt", "https://br.pathofexile.com/" },
-    { "ru", "https://ru.pathofexile.com/" },
-    { "th", "https://th.pathofexile.com/" },
-    { "zh", "http://web.poe.garena.tw/" },
-};
+var outputPath = Path.Combine(configuration.DataPath, "Api/");
 
 try
 {
@@ -30,35 +16,35 @@ try
     using var apiClient = new ApiClient();
 
     // Make sure the output directory is empty and exists
-    if (Directory.Exists(apiPath))
+    if (Directory.Exists(outputPath))
     {
-        Directory.Delete(apiPath, true);
+        Directory.Delete(outputPath, true);
     }
-    Directory.CreateDirectory(apiPath);
+    Directory.CreateDirectory(outputPath);
 
     // Loop through all languages and extract modifiers
-    foreach (var baseUrl in baseUrls)
+    foreach (var baseUrl in Languages.BaseUrls)
     {
         Console.WriteLine($"Starting {baseUrl.Key} modifiers");
 
         // Get modifiers from the api
         var results = await apiClient.Fetch<ApiCategory>(baseUrl.Key, "api/trade/data/stats");
 
-        using var stream = File.Create(Path.Combine(apiPath, $"modifiers.{baseUrl.Key}.json"));
+        using var stream = File.Create(Path.Combine(outputPath, $"modifiers.{baseUrl.Key}.json"));
         await JsonSerializer.SerializeAsync(stream, results);
 
         Console.WriteLine($"Finished {baseUrl.Key} modifiers");
     }
 
     // Loop through all languages and extract static
-    foreach (var baseUrl in baseUrls)
+    foreach (var baseUrl in Languages.BaseUrls)
     {
         Console.WriteLine($"Starting {baseUrl.Key} static items");
 
         // Get static items from the api
         var results = await apiClient.Fetch<StaticItemCategory>(baseUrl.Key, "api/trade/data/static");
 
-        using var stream = File.Create(Path.Combine(apiPath, $"static.{baseUrl.Key}.json"));
+        using var stream = File.Create(Path.Combine(outputPath, $"static.{baseUrl.Key}.json"));
         await JsonSerializer.SerializeAsync(stream, results);
 
         Console.WriteLine($"Finished {baseUrl.Key} static items");
@@ -71,5 +57,10 @@ catch (Exception e)
     throw;
 }
 
-Console.WriteLine("Done!");
+Console.WriteLine("Done! This program will close in 5 seconds.");
+_ = Task.Run(async () =>
+{
+    await Task.Delay(5000);
+    Environment.Exit(0);
+});
 Console.ReadKey();

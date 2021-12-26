@@ -1,7 +1,7 @@
 ﻿using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace Sidekick.Data.Api.Client;
+namespace Sidekick.DataGenerator.Api.Client;
 
 internal class ApiClient : IDisposable
 {

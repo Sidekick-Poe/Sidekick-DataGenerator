@@ -1,4 +1,4 @@
-namespace Sidekick.Data.Api;
+namespace Sidekick.DataGenerator.Api.Client;
 
 public class FetchResult<T>
 {
