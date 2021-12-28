@@ -31,18 +31,18 @@ var dataFileProvider = serviceProvider.GetRequiredService<DataFileProvider>();
 // Export game files
 if (!string.IsNullOrEmpty(configuration.GgpkPath))
 {
-    //Console.WriteLine("Exporting files from content.ggpk");
+    Console.WriteLine("Exporting files from content.ggpk");
 
-    //dataFileProvider.Clean("Game/");
-    //await serviceProvider.GetRequiredService<GameFileExporter>().WriteFiles();
+    dataFileProvider.Clean("Game/");
+    await serviceProvider.GetRequiredService<GameFileExporter>().WriteFiles();
 }
 
 // Export API files
-//Console.WriteLine("Exporting files from the trade API");
+Console.WriteLine("Exporting files from the trade API");
 
-//dataFileProvider.Clean("Api/");
-//await serviceProvider.GetRequiredService<StaticItemProvider>().Build();
-//await serviceProvider.GetRequiredService<StatProvider>().Build();
+dataFileProvider.Clean("Api/");
+await serviceProvider.GetRequiredService<StaticItemProvider>().Build();
+await serviceProvider.GetRequiredService<StatProvider>().Build();
 
 // Generate Sidekick files
 Console.WriteLine("Generating Sidekick files");
