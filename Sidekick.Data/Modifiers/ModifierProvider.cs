@@ -4,11 +4,11 @@ namespace Sidekick.Data.Modifiers;
 
 public class ModifierProvider
 {
-    private readonly StatDescriptionProvider statDescriptionProvider1;
+    private readonly StatDescriptionProvider statDescriptionProvider;
 
     public ModifierProvider(
-        StatDescriptionProvider statDescriptionProvider1)
+        StatDescriptionProvider statDescriptionProvider)
     {
-        this.statDescriptionProvider1 = statDescriptionProvider1;
+        this.statDescriptionProvider = statDescriptionProvider;
     }
 }

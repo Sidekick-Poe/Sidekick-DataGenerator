@@ -27,7 +27,7 @@ public class StaticItemProvider
 
         foreach (var category in StaticItemCategories)
         {
-            await dataFileProvider.WriteJson($"Api/stats.{category.Key}.json", category.Value);
+            await dataFileProvider.WriteJson($"Api/static.{category.Key}.json", category.Value);
         }
     }
 }
