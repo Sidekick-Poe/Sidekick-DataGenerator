@@ -1,4 +1,4 @@
-namespace Sidekick.Data.Api.StaticItems;
+namespace Sidekick.Data.Api.StaticItems.Models;
 
 public class StaticItem
 {

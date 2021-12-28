@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0-windows7.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\Sidekick-GGPK\Cross-Platform\LibDat2\LibDat2.csproj" />
+		<ProjectReference Include="..\..\Sidekick-GGPK\LibBundle\LibBundle.csproj" />
+		<ProjectReference Include="..\..\Sidekick-GGPK\LibGGPK2\LibGGPK2.csproj" />
+		<ProjectReference Include="..\Sidekick.Data.Common\Sidekick.Data.Common.csproj" />
+	</ItemGroup>
+
+</Project>

@@ -1,6 +1,6 @@
-namespace Sidekick.Data.Api.Modifiers;
+namespace Sidekick.Data.Api.Stats.Models;
 
-public class ApiModifierOption
+public class StatModifierOption
 {
     public int Id { get; set; }
     public string? Text { get; set; }
