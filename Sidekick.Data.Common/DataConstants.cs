@@ -2,17 +2,79 @@
 
 public static class DataConstants
 {
-    public static Dictionary<string, string> Languages = new()
+    public static Dictionary<string, Language> Languages = new()
     {
-        { "de", "German" },
-        { "en", "English" },
-        { "es", "Spanish" },
-        { "fr", "French" },
-        { "kr", "Korean" },
-        { "pt", "Portuguese" },
-        { "ru", "Russian" },
-        { "th", "Thai" },
-        { "zh", "Simplified Chinese" },
-        { "zh-CN", "Traditional Chinese" },
+        {
+            "en",
+            new Language()
+            {
+                GameName = "English",
+                ApiLocalSuffix = "(Local)",
+            }
+        },
+        {
+            "de",
+            new Language()
+            {
+                GameName = "German",
+                ApiLocalSuffix = "(Local)",
+            }
+        },
+        {
+            "es",
+            new Language()
+            {
+                GameName = "Spanish",
+                ApiLocalSuffix = "(Local)",
+            }
+        },
+        {
+            "fr",
+            new Language()
+            {
+                GameName = "French",
+                ApiLocalSuffix = "(Local)",
+            }
+        },
+        {
+            "kr",
+            new Language()
+            {
+                GameName = "Korean",
+                ApiLocalSuffix = "(Local)",
+            }
+        },
+        {
+            "pt",
+            new Language()
+            {
+                GameName = "Portuguese",
+                ApiLocalSuffix = "(Local)",
+            }
+        },
+        {
+            "ru",
+            new Language()
+            {
+                GameName = "Russian",
+                ApiLocalSuffix = "(Local)",
+            }
+        },
+        {
+            "th",
+            new Language()
+            {
+                GameName = "Thai",
+                ApiLocalSuffix = "(Local)",
+            }
+        },
+        {
+            "zh",
+            new Language()
+            {
+                GameName = "Traditional Chinese",
+                ApiLocalSuffix = "(Local)",
+            }
+        },
     };
 }

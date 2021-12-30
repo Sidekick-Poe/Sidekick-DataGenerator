@@ -2,14 +2,14 @@ using Sidekick.Data.Api.Client;
 using Sidekick.Data.Api.StaticItems.Models;
 using Sidekick.Data.Common;
 
-namespace Sidekick.Data.Api.Stats;
+namespace Sidekick.Data.Api.StaticItems;
 
-public class StaticItemProvider
+public class ApiStaticItemProvider
 {
     private readonly DataFileProvider dataFileProvider;
     private readonly ApiClient apiClient;
 
-    public StaticItemProvider(
+    public ApiStaticItemProvider(
         DataFileProvider dataFileProvider,
         ApiClient apiClient)
     {
@@ -17,17 +17,17 @@ public class StaticItemProvider
         this.apiClient = apiClient;
     }
 
-    public Dictionary<string, List<StaticItemCategory>>? StaticItemCategories { get; set; }
+    public Dictionary<string, List<StaticItemCategory>> StaticItemCategories { get; set; } = new();
 
     public async Task Build()
     {
-        if (StaticItemCategories != null) return;
+        if (StaticItemCategories.Any()) return;
 
         StaticItemCategories = await apiClient.FetchAll<StaticItemCategory>("api/trade/data/static");
 
         foreach (var category in StaticItemCategories)
         {
-            await dataFileProvider.WriteJson($"Api/static.{category.Key}.json", category.Value);
+            await dataFileProvider.WriteJson($"Api/raw_static.{category.Key}.json", category.Value);
         }
     }
 }

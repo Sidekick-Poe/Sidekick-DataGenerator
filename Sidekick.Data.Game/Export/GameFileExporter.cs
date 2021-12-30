@@ -41,30 +41,15 @@ public class GameFileExporter
         "Bundles2/Data/{LANGUAGE}/Mods.dat",
 
         // Metadata
-        "Bundles2/Metadata/StatDescriptions/passive_skill_aura_stat_descriptions.txt",
-        "Bundles2/Metadata/StatDescriptions/passive_skill_stat_descriptions.txt",
-        "Bundles2/Metadata/StatDescriptions/active_skill_gem_stat_descriptions.txt",
         "Bundles2/Metadata/StatDescriptions/advanced_mod_stat_descriptions.txt",
-        "Bundles2/Metadata/StatDescriptions/aura_skill_stat_descriptions.txt",
-        "Bundles2/Metadata/StatDescriptions/banner_aura_skill_stat_descriptions.txt",
-        "Bundles2/Metadata/StatDescriptions/beam_skill_stat_descriptions.txt",
-        "Bundles2/Metadata/StatDescriptions/brand_skill_stat_descriptions.txt",
-        "Bundles2/Metadata/StatDescriptions/buff_skill_stat_descriptions.txt",
-        "Bundles2/Metadata/StatDescriptions/curse_skill_stat_descriptions.txt",
-        "Bundles2/Metadata/StatDescriptions/debuff_skill_stat_descriptions.txt",
-        "Bundles2/Metadata/StatDescriptions/secondary_debuff_skill_stat_descriptions.txt",
-        "Bundles2/Metadata/StatDescriptions/gem_stat_descriptions.txt",
-        "Bundles2/Metadata/StatDescriptions/minion_attack_skill_stat_descriptions.txt",
-        "Bundles2/Metadata/StatDescriptions/minion_skill_stat_descriptions.txt",
-        "Bundles2/Metadata/StatDescriptions/minion_spell_skill_stat_descriptions.txt",
-        "Bundles2/Metadata/StatDescriptions/minion_spell_damage_skill_stat_descriptions.txt",
+        "Bundles2/Metadata/StatDescriptions/atlas_stat_descriptions.txt",
+        "Bundles2/Metadata/StatDescriptions/chest_stat_descriptions.txt",
+        "Bundles2/Metadata/StatDescriptions/expedition_relic_stat_descriptions.txt",
+        "Bundles2/Metadata/StatDescriptions/heist_equipment_stat_descriptions.txt",
+        "Bundles2/Metadata/StatDescriptions/leaguestone_stat_descriptions.txt",
+        "Bundles2/Metadata/StatDescriptions/map_stat_descriptions.txt",
         "Bundles2/Metadata/StatDescriptions/monster_stat_descriptions.txt",
-        "Bundles2/Metadata/StatDescriptions/offering_skill_stat_descriptions.txt",
-        "Bundles2/Metadata/StatDescriptions/single_minion_spell_skill_stat_descriptions.txt",
-        "Bundles2/Metadata/StatDescriptions/skillpopup_stat_filters.txt",
-        "Bundles2/Metadata/StatDescriptions/skill_stat_descriptions.txt",
         "Bundles2/Metadata/StatDescriptions/stat_descriptions.txt",
-        "Bundles2/Metadata/StatDescriptions/variable_duration_skill_stat_descriptions.txt",
     };
 
     public async Task WriteFiles()
@@ -93,7 +78,7 @@ public class GameFileExporter
         }
     }
 
-    public async Task Write(GGPKContainer ggpkContainer, string record, string? language)
+    public async Task Write(GGPKContainer ggpkContainer, string record, string language)
     {
         var ggpkRecord = ggpkContainer.FindRecord(record);
 

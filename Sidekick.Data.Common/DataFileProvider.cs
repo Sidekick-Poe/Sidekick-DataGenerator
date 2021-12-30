@@ -1,4 +1,6 @@
-﻿using System.Text;
+﻿using CsvHelper;
+using System.Globalization;
+using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
@@ -55,13 +57,13 @@ public class DataFileProvider
         }
 
         using var stream = File.Create(outputPath);
-        var encoding = new UTF8Encoding(true);
-        await stream.WriteAsync(encoding.Preamble.ToArray());
+        //var encoding = new UTF8Encoding(true);
+        //await stream.WriteAsync(encoding.Preamble.ToArray());
         await JsonSerializer.SerializeAsync(stream, data, new JsonSerializerOptions()
         {
             PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
             WriteIndented = true,
-            DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
+            DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingDefault,
         });
     }
 
@@ -82,6 +84,23 @@ public class DataFileProvider
             WriteIndented = true,
             DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
         });
+    }
+
+    public List<TReturn> ReadCsv<TReturn>(string path)
+    {
+        var inputPath = Path.Combine(configuration.DataPath, path);
+
+        if (!File.Exists(inputPath))
+        {
+            Console.WriteLine($"Unexpected file path in {nameof(DataFileProvider)}.{nameof(ReadCsv)}. {inputPath}");
+            return default;
+        }
+
+        using var stream = File.OpenRead(inputPath);
+        using var reader = new StreamReader(stream);
+        using var csv = new CsvReader(reader, CultureInfo.InvariantCulture);
+
+        return csv.GetRecords<TReturn>().ToList();
     }
 
     public async Task WriteRaw(string path, string data)
